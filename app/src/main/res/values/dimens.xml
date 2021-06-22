@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Home -->
+    <dimen name="counter_text_view_width">48dp</dimen>
+    <dimen name="counter_text_view_height">24dp</dimen>
+    <dimen name="counter_text_view_right_padding">16dp</dimen>
+    <dimen name="counter_text_view_bottom_padding">15dp</dimen>
+    <dimen name="sp_width_above_rv">12dp</dimen>
+
+    <!-- Home good item -->
+    <dimen name="item_iv_goods_width">162dp</dimen>
+
+    <dimen name="iv_favorite_width">24dp</dimen>
+    <dimen name="iv_favorite_height">24dp</dimen>
+
+
+    <dimen name="guideline_left">12dp</dimen>
+    <dimen name="guideline_right">12dp</dimen>
+
+
+
+    <dimen name="text_size_11sp">11sp</dimen>
+    <dimen name="text_size_12sp">12sp</dimen>
+    <dimen name="text_size_18sp">18sp</dimen>
+
+    <dimen name="margin_left_2dp">2dp</dimen>
+    <dimen name="margin_left_5dp">5dp</dimen>
+    <dimen name="margin_left_4dp">4dp</dimen>
+    <dimen name="margin_top_8dp">8dp</dimen>
+    <dimen name="margin_top_4dp">4dp</dimen>
+    <dimen name="margin_top_12dp">12dp</dimen>
+    <dimen name="margin_right_12dp">12dp</dimen>
+    <dimen name="margin_right_14dp">14dp</dimen>
+    <dimen name="margin_bottom_21dp">21dp</dimen>
+
+    <dimen name="letter_spacing_minus_3">-0.03</dimen>
+</resources>
