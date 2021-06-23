@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">AblyAssignment</string>
 
+    <!-- Bottom Navigation View title -->
+    <string name="bottom_nav_home">홈</string>
+    <string name="bottom_nav_favorite">좋아요</string>
+
+
     <!-- Preference Keys -->
     <string name="pref_key_enable_hide_bottom_navigation">pref_key_enable_hide_bottom_navigation</string>
 </resources>
