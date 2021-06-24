@@ -4,4 +4,7 @@ import javax.inject.Qualifier
 
 
 @Qualifier
-annotation class Retrofit
+annotation class RetrofitHomeApi
+
+@Qualifier
+annotation class NetworkLogger
