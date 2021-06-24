@@ -5,16 +5,13 @@
     tools:context=".presentation.MainActivity"
     >
     <data>
-
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/root_cst_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
-            android:theme="@style/ThemeOverlay.MaterialComponents.ActionBar"
             android:layout_width="0dip"
             android:layout_height="56dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -22,6 +19,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             tools:laout_height="80dp"
             />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/root_cst_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+        </androidx.constraintlayout.widget.ConstraintLayout>
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
             android:layout_width="0dip"
@@ -29,6 +34,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/white"
+            app:menu="@menu/bottom_navigation"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
