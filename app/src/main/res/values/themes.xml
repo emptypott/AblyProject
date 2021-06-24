@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="Theme.AblyAssignment" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme.AblyAssignment" parent="Theme.AppCompat.Light">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -15,8 +15,4 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="ThemeOverlay.MaterialComponents.ActionBar" parent="Theme.AblyAssignment">
-        <item name="backgroundColor">@color/white</item>
-        <item name="android:textColor">@color/black</item>
-    </style>
 </resources>
