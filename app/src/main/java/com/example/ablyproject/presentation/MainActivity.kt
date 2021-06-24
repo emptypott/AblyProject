@@ -6,20 +6,76 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.IdRes
 import androidx.annotation.MenuRes
 import androidx.annotation.StringRes
+import androidx.core.view.get
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import com.example.ablyproject.R
+import com.example.ablyproject.databinding.ActivityMainBinding
+
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.android.DaggerActivity
+import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : DaggerAppCompatActivity() {
 
 
     @Inject lateinit var navigationController : NavigationController
 
-
+    private val binding: ActivityMainBinding by lazy {
+        DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setSupportActionBar(binding.toolbar)
+        setupBottomNavigation(savedInstanceState)
+        forceReloadCurrentFragment()
+    }
+
+
+    private fun forceReloadCurrentFragment() {
+        binding.bottomNavigation.apply{
+            menu.findItem(selectedItemId)?.let {
+                BottomNavigationItem.forId(it.itemId)
+                    .navigate(navigationController)
+            }
+        }
+    }
+
+    /**
+     * Bottom Navigation View 세팅 함수.
+     */
+    private fun setupBottomNavigation(savedInstanceState: Bundle?) {
+        binding.bottomNavigation.itemIconTintList = null
+
+        setupToolbar(BottomNavigationItem.HOME) // toolbar 초기화.
+
+        binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
+            val navigationItem = BottomNavigationItem
+                    .forId(item.itemId)
+            setupToolbar(navigationItem)
+
+            navigationItem.navigate(navigationController)
+            true
+        }
+
+        binding.bottomNavigation.setOnNavigationItemReselectedListener { item ->
+            val navigationItem = BottomNavigationItem
+                    .forId(item.itemId)
+            val fragment = supportFragmentManager.findFragmentByTag(navigationItem.name)
+            if (fragment is BottomNavigationItem.OnReselectedListener) {
+                fragment.onReselected()
+            }
+        }
+    }
+
+    private fun setupToolbar(navigationItem: BottomNavigationItem) {
+        supportActionBar?.apply {
+            title = getString(navigationItem.titleRes!!)
+            setDisplayShowHomeEnabled(false)
+            setIcon(null)
+        }
     }
 
 
@@ -33,7 +89,7 @@ class MainActivity : AppCompatActivity() {
         HOME(R.id.navigation_home, R.string.bottom_nav_home, R.drawable.icon_home, {
             navigateToHome()
         }),
-        FAVORITE(R.id.navigation_home, R.id.navigation_favorite, R.drawable.icon_zzim, {
+        FAVORITE(R.id.navigation_favorite, R.string.bottom_nav_favorite, R.drawable.icon_zzim, {
             navigateToFavorite()
         });
 
