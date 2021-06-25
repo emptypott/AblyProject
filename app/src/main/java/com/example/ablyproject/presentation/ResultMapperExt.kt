@@ -30,11 +30,6 @@ fun <T> Flowable<T>.toResult(schedulerProvider: SchedulerProvider):
     }
 }
 
-@CheckResult fun <T> Single<T>.toResult(schedulerProvider: SchedulerProvider):
-        Observable<Result<T>> {
-    return toObservable().toResult(schedulerProvider)
-}
-
 @CheckResult fun <T> Completable.toResult(schedulerProvider: SchedulerProvider):
         Observable<Result<T>> {
     return toObservable<T>().toResult(schedulerProvider)
