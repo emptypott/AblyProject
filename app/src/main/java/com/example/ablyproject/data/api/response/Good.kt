@@ -2,7 +2,7 @@ package com.example.ablyproject.data.api.response
 
 import com.google.gson.annotations.SerializedName
 
-data class Good(
+data class Good (
     val id: Int?,
     val name: String?,
     val image : String?,
