@@ -5,8 +5,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import javax.inject.Inject
 import com.example.ablyproject.R
-import com.example.ablyproject.presentation.favorite.FavoriteFragment
-import com.example.ablyproject.presentation.home.HomeFragment
+import com.example.ablyproject.presentation.fragment.FavoriteFragment
+import com.example.ablyproject.presentation.fragment.HomeFragment
 import com.example.ablyproject.util.Findable
 
 class NavigationController @Inject constructor(private val activity: AppCompatActivity) {
