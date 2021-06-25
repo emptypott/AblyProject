@@ -2,11 +2,8 @@ package com.example.ablyproject.data.db.dao
 
 import androidx.annotation.CheckResult
 import androidx.room.*
-import com.example.ablyproject.data.api.response.Banner
 import com.example.ablyproject.data.db.entity.BannerEntity
 import io.reactivex.Flowable
-import org.intellij.lang.annotations.Language
-
 
 @Dao
 abstract class BannerDao {
