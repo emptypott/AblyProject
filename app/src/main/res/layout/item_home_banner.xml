@@ -23,6 +23,9 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:layout_height="200dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:layout_constraintDimensionRatio="H,1:1.2"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
