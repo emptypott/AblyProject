@@ -17,7 +17,7 @@ import org.intellij.lang.annotations.Language
     abstract fun deleteAll()
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract fun insert(banners : List<GoodEntity>)
+    abstract fun insert(goods : List<GoodEntity>)
 
     @Transaction
     open fun clearAndInsert(newGoods : List<GoodEntity>) {
