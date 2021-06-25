@@ -7,71 +7,80 @@
     <data></data>
     
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/layout_refresh_home"
+        android:id="@+id/swipe_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layout_constraint_root"
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested_scrollview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             >
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/gl_left"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintGuide_begin="@dimen/guideline_left"
-                />
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/gl_right"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintGuide_end="@dimen/guideline_right"
-                />
-        <!-- Auto Scroll View Pager -->
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/vp2_banners"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:layout_height="263dp"
-            />
-            <!-- Counter TextView -->
-        <TextView
-            android:id="@+id/tv_counter"
-            android:layout_width="@dimen/counter_text_view_width"
-            android:layout_height="@dimen/counter_text_view_height"
-            android:background="@drawable/bg_counter_textview"
-            app:layout_constraintEnd_toEndOf="@id/vp2_banners"
-            app:layout_constraintBottom_toBottomOf="@id/vp2_banners"
-            android:layout_marginBottom="@dimen/counter_text_view_bottom_padding"
-            android:layout_marginRight="@dimen/counter_text_view_right_padding"
-            android:gravity="center"
-            android:textSize="@dimen/text_size_12sp"
-            android:textColor="@color/white"
-            tools:text="12/12"
-            />
-            <Space
-                android:id="@+id/rv_above_space"
-                android:layout_height="@dimen/sp_width_above_rv"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_constraint_root"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_left"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintGuide_begin="@dimen/guideline_left"
+                    />
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_right"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintGuide_end="@dimen/guideline_right"
+                    />
+            <!-- Auto Scroll View Pager -->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp2_banners"
                 android:layout_width="0dip"
-                app:layout_constraintTop_toBottomOf="@id/vp2_banners"
+                android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                tools:layout_height="263dp"
                 />
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_home_goods"
-                android:layout_width="0dip"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/rv_above_space"
-                app:layout_constraintStart_toStartOf="@id/gl_left"
-                app:layout_constraintEnd_toEndOf="@id/gl_right"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                <!-- Counter TextView -->
+            <TextView
+                android:id="@+id/tv_counter"
+                android:layout_width="@dimen/counter_text_view_width"
+                android:layout_height="@dimen/counter_text_view_height"
+                android:background="@drawable/bg_counter_textview"
+                app:layout_constraintEnd_toEndOf="@id/vp2_banners"
+                app:layout_constraintBottom_toBottomOf="@id/vp2_banners"
+                android:layout_marginBottom="@dimen/counter_text_view_bottom_padding"
+                android:layout_marginRight="@dimen/counter_text_view_right_padding"
+                android:gravity="center"
+                android:textSize="@dimen/text_size_12sp"
+                android:textColor="@color/white"
+                tools:text="12/12"
                 />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <Space
+                    android:id="@+id/rv_above_space"
+                    android:layout_height="@dimen/sp_width_above_rv"
+                    android:layout_width="0dip"
+                    app:layout_constraintTop_toBottomOf="@id/vp2_banners"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_home_goods"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/rv_above_space"
+                    app:layout_constraintStart_toStartOf="@id/gl_left"
+                    app:layout_constraintEnd_toEndOf="@id/gl_right"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    android:nestedScrollingEnabled="false"
+                    android:paddingBottom="?attr/actionBarSize"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </layout>
