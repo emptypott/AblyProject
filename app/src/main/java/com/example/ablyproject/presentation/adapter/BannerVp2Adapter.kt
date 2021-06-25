@@ -7,11 +7,9 @@ import com.bumptech.glide.Glide
 import com.example.ablyproject.data.api.response.Banner
 import com.example.ablyproject.databinding.ItemHomeBannerBinding
 
-class ViewPager2Adapter() : RecyclerView.Adapter<ViewPager2Adapter.ImageViewHolder>() {
+class BannerVp2Adapter : RecyclerView.Adapter<BannerVp2Adapter.ImageViewHolder>() {
 
     var bannerList = ArrayList<Banner>()
-
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
         return ImageViewHolder.from(parent)
@@ -22,6 +20,7 @@ class ViewPager2Adapter() : RecyclerView.Adapter<ViewPager2Adapter.ImageViewHold
     }
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
+        if (bannerList.size <= 0) return
         val banner = bannerList[position%3]
         holder.bind(banner)
     }
@@ -44,6 +43,5 @@ class ViewPager2Adapter() : RecyclerView.Adapter<ViewPager2Adapter.ImageViewHold
         fun bind(item: Banner) {
             Glide.with(binding.root).load(item.image).into(binding.ivBannerImage)
         }
-
     }
 }
