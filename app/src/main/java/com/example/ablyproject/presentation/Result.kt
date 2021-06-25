@@ -13,7 +13,9 @@ sealed class Result<T>(val inProgress: Boolean) {
     }
 
     data class Success<T>(var data: T) : Result<T>(false)
+
     data class Failure<T>(val errorMessage: String?, val e: Throwable) : Result<T>(false)
+
     companion object {
         fun <T> inProgress(): Result<T> = InProgress()
 
