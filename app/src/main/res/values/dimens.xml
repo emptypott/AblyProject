@@ -35,4 +35,6 @@
     <dimen name="margin_bottom_21dp">21dp</dimen>
 
     <dimen name="letter_spacing_minus_3">-0.03</dimen>
+
+    <dimen name="grid_decoration">6dp</dimen>
 </resources>
