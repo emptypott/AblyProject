@@ -6,6 +6,7 @@ import com.example.ablyproject.data.db.AppDatabase
 import com.example.ablyproject.data.db.HomeDatabase
 import com.example.ablyproject.data.db.HomeRoomDatabase
 import com.example.ablyproject.data.db.dao.BannerDao
+import com.example.ablyproject.data.db.dao.FavoriteDao
 import com.example.ablyproject.data.db.dao.GoodDao
 import dagger.Module
 import dagger.Provides
@@ -19,13 +20,14 @@ import javax.inject.Singleton
     @Singleton @Provides
     fun provideHomeDatabase(
         appDatabase: AppDatabase,
-        bannerDbDao: BannerDao,
-        goodDbDao: GoodDao
-    ) : HomeDatabase = HomeRoomDatabase(appDatabase, bannerDbDao, goodDbDao)
+        bannerDao: BannerDao,
+        goodDao: GoodDao,
+        favoriteDao: FavoriteDao
+    ) : HomeDatabase = HomeRoomDatabase(appDatabase, bannerDao, goodDao, favoriteDao)
 
     @Singleton @Provides
     open fun provideDb(app : Application) : AppDatabase =
-        Room.databaseBuilder(app, AppDatabase::class.java, "homeapi.db")
+        Room.databaseBuilder(app, AppDatabase::class.java, "homeapi.db").allowMainThreadQueries()
             .fallbackToDestructiveMigration().build()
 
     @Singleton @Provides
@@ -33,5 +35,8 @@ import javax.inject.Singleton
 
     @Singleton @Provides
     fun provideGoodDao(db : AppDatabase) : GoodDao = db.goodDao()
+
+    @Singleton @Provides
+    fun provideFavoriteDao(db : AppDatabase) : FavoriteDao = db.favoriteDao()
 
 }
