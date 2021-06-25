@@ -4,8 +4,10 @@ import android.annotation.SuppressLint
 import androidx.annotation.CheckResult
 import androidx.annotation.VisibleForTesting
 import com.example.ablyproject.data.api.response.Banner
+import com.example.ablyproject.data.api.response.Favorite
 import com.example.ablyproject.data.api.response.Good
 import com.example.ablyproject.data.db.entity.BannerEntity
+import com.example.ablyproject.data.db.entity.FavoriteEntity
 import com.example.ablyproject.data.db.entity.GoodEntity
 import io.reactivex.Flowable
 
@@ -14,8 +16,8 @@ fun BannerEntity.toBanner() : Banner = Banner(
     image = image
 )
 
-fun GoodEntity.toGood() : Good = Good (
-    id = id?.toInt(),
+fun GoodEntity.toGood() : Good = Good(
+    id = id,
     name = name,
     image = image,
     isNew = isNew,
@@ -23,7 +25,6 @@ fun GoodEntity.toGood() : Good = Good (
     actualPrice = actualPrice,
     price = price
 )
-
 
 @SuppressLint("VisibleForTests")
 @CheckResult
@@ -42,5 +43,26 @@ fun Flowable<List<GoodEntity>>.toGoods() : Flowable<List<Good>> = map {
 }
 
 @SuppressLint("VisibleForTests")
+@CheckResult
+fun Flowable<List<FavoriteEntity>>.toFavorites() : Flowable<List<Favorite>> = map {
+        favoriteEntities -> favoriteEntities.toFavorites()
+}
+
+@SuppressLint("VisibleForTests")
 @VisibleForTesting
-fun List<GoodEntity>.toGoods() = map {Good(it.id, it.name, it.image, it.isNew,it.sellCount, it.actualPrice, it.price)}
+fun List<GoodEntity>.toGoods() = map {
+    Good(
+        it.id,
+        it.name,
+        it.image,
+        it.isNew,
+        it.sellCount,
+        it.actualPrice,
+        it.price
+    )
+}
+
+@SuppressLint("VisibleForTests")
+@VisibleForTesting
+fun List<FavoriteEntity>.toFavorites() = map { Favorite(it.id) }
+
