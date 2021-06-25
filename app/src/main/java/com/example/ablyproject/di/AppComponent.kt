@@ -9,7 +9,6 @@ import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
 @Singleton
-//dagger.android 사용을 위한 설정
 @Component(modules = [
     AndroidSupportInjectionModule::class,
     AppModule::class,
