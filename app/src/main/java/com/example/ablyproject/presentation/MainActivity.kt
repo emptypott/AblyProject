@@ -1,24 +1,17 @@
 package com.example.ablyproject.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.annotation.DrawableRes
 import androidx.annotation.IdRes
 import androidx.annotation.MenuRes
 import androidx.annotation.StringRes
-import androidx.core.view.get
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
 import com.example.ablyproject.R
 import com.example.ablyproject.databinding.ActivityMainBinding
-
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import dagger.android.DaggerActivity
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
 class MainActivity : DaggerAppCompatActivity() {
-
 
     @Inject lateinit var navigationController : NavigationController
 
