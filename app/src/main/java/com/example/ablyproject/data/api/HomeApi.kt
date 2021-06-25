@@ -11,4 +11,8 @@ interface HomeApi {
     @GET("home")
     @CheckResult
     fun getHomeData() : Single<Response>
+
+    @GET("home/goods")
+    @CheckResult
+    fun getAddGoodData(@Query("lastId")lastId: Int?) : Single<Response>
 }
