@@ -2,10 +2,6 @@
 
 # 🌿Project Structure
 
-![Fashion%20App%20Small%20Proejct%20%E1%84%8B%E1%85%AD%E1%84%8B%E1%85%A3%E1%86%A8%20ea929baf7cad4605bb6ee873b33f88cd/2DE49AD8-A59F-4253-AA05-5F7C8996F03C.jpeg](Fashion%20App%20Small%20Proejct%20%E1%84%8B%E1%85%AD%E1%84%8B%E1%85%A3%E1%86%A8%20ea929baf7cad4605bb6ee873b33f88cd/2DE49AD8-A59F-4253-AA05-5F7C8996F03C.jpeg)
-
-![Fashion%20App%20Small%20Proejct%20%E1%84%8B%E1%85%AD%E1%84%8B%E1%85%A3%E1%86%A8%20ea929baf7cad4605bb6ee873b33f88cd/47EEED40-0BE4-45B0-BF85-25229B666FE2_1_105_c.jpeg](Fashion%20App%20Small%20Proejct%20%E1%84%8B%E1%85%AD%E1%84%8B%E1%85%A3%E1%86%A8%20ea929baf7cad4605bb6ee873b33f88cd/47EEED40-0BE4-45B0-BF85-25229B666FE2_1_105_c.jpeg)
-
 ## Presenstation Layer
 
 - View 에 해당하는 Activity / Fragment 를 User 와 소통하도록 구현.
